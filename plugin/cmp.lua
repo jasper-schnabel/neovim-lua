@@ -10,8 +10,7 @@ require('cmp').setup {
     ['<C-y>'] = require('cmp').mapping.confirm({ select = true })
   },
   sources = {
-    { name = 'buffer' },
-    { name = 'omni' },
+    -- I have to decide which sources to use
   },
   snippet = {
     expand = function()
@@ -19,13 +18,12 @@ require('cmp').setup {
     end
   },
   formatting = {
-    fields = { 'abbr', 'kind', 'menu' },
-    -- format = {}
+    -- needs to be setup once lspconfig is setup
   },
   documentation = {
     border = 'rounded',
-    maxwidth = 60, -- needs testing
-    maxheight = 40, -- needs testing
+    maxwidth = 60,
+    maxheight = 20,
   },
   experimental = {
     native_menu = false,
