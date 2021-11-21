@@ -1,12 +1,5 @@
 -- mappings
-local default_options = { noremap = true, silent = true }
-local function map(m, b, f, o)
-  if (o == nil) then
-    o = default_options
-  end
-
-  return vim.api.nvim_set_keymap(m, b, f, o)
-end
+local map = require('utils').map
 
 -- better window navigation
 map('n', '<C-h>', '<C-w>h')

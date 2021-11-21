@@ -10,7 +10,11 @@ require('cmp').setup {
     ['<C-y>'] = require('cmp').mapping.confirm({ select = true })
   },
   sources = {
-    -- I have to decide which sources to use
+    { name = 'buffer', keyword_length = 3 },
+    { name = 'path' },
+    { name = 'nvim_lua' },
+    { name = 'nvim_lsp' },
+    { name = 'spell', max_item_count = 15 },
   },
   snippet = {
     expand = function()
@@ -23,10 +27,10 @@ require('cmp').setup {
   documentation = {
     border = 'rounded',
     maxwidth = 60,
-    maxheight = 20,
+    maxheight = 15,
   },
   experimental = {
     native_menu = false,
-    ghost_text = true, -- let's play with this for a day or two
+    ghost_text = true, -- this is pretty cool
   },
 }
