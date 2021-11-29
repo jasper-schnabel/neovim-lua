@@ -47,5 +47,9 @@ map('n', '<leader>w', ':set wrap!<CR>')
 map('i', ',,', '<Esc>/<++><CR>c4l')
 map('n', '<leader>,', '<Esc>/<++><CR>c4l')
 
+-- paq
+map('n', '<leader>ps', ':PaqSync<CR>')
+map('n', '<leader>pl', ':PaqList<CR>')
+
 -- zen-mode
 map('n', '<leader>z', ':ZenMode<CR>')

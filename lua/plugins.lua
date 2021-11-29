@@ -12,4 +12,5 @@ require('paq') {
   'hrsh7th/cmp-nvim-lsp',
   'f3fora/cmp-spell',
   'neovim/nvim-lspconfig',
+  'norcalli/nvim-colorizer.lua',
 }
