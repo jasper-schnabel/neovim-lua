@@ -14,8 +14,8 @@ map('n', '<C-Down>', ':lua require("utils").resize(false, 3)<CR>')
 map('n', '<C-Up>', ':lua require("utils").resize(false, -3)<CR>')
 
 -- better buffer switching
-map('n', '<TAB>', ':bnext<CR>')
-map('n', '<S-TAB>', ':bprevious<CR>')
+map('n', '<S-l>', ':bnext<CR>')
+map('n', '<S-h>', ':bprevious<CR>')
 
 -- better indenting
 map('v', '>', '>gv')
@@ -53,3 +53,11 @@ map('n', '<leader>pl', ':PaqList<CR>')
 
 -- zen-mode
 map('n', '<leader>z', ':ZenMode<CR>')
+
+-- telescope
+map('n', '<leader>f', ':Telescope find_files<CR>')
+map('n', '<leader>fg', ':Telescope git_files<CR>')
+map('n', '<leader>fl', ':Telescope live_grep<CR>')
+map('n', '<leader>fb', ':Telescope buffers<CR>')
+map('n', '<leader>fr', ':Telescope oldfiles<CR>')
+map('n', '<leader>ft', ':Telescope<CR>')

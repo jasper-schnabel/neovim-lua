@@ -13,4 +13,6 @@ require('paq') {
   'f3fora/cmp-spell',
   'neovim/nvim-lspconfig',
   'norcalli/nvim-colorizer.lua',
+  'nvim-telescope/telescope.nvim',
+  'nvim-lua/plenary.nvim',
 }
