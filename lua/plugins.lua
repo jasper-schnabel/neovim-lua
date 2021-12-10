@@ -15,4 +15,5 @@ require('paq') {
   'norcalli/nvim-colorizer.lua',
   'nvim-telescope/telescope.nvim',
   'nvim-lua/plenary.nvim',
+  'jose-elias-alvarez/minsnip.nvim',
 }

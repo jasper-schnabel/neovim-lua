@@ -1,4 +1,6 @@
 -- cmp
+require('minsnip').setup {}
+require('cmp').event:on('confirm_done', require('nvim-autopairs.completion.cmp').on_confirm_done())
 require('cmp').setup {
   mapping = {
     ['<C-n>'] = require('cmp').mapping.select_next_item(),
@@ -14,11 +16,12 @@ require('cmp').setup {
     { name = 'path' },
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
+    { name = 'minsnip' },
     { name = 'spell', max_item_count = 15 },
   },
   snippet = {
-    expand = function()
-      error('Snippet engine is not configured.')
+    expand = function(args)
+      require('minsnip').expand_anonymous(args.body)
     end
   },
   formatting = {

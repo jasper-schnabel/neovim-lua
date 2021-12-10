@@ -43,13 +43,17 @@ map('n', '<leader><Space>', ':nohlsearch<CR>')
 -- toggle wrap
 map('n', '<leader>w', ':set wrap!<CR>')
 
--- custom snippets
+-- custom placeholders
 map('i', ',,', '<Esc>/<++><CR>c4l')
 map('n', '<leader>,', '<Esc>/<++><CR>c4l')
 
 -- paq
 map('n', '<leader>ps', ':PaqSync<CR>')
 map('n', '<leader>pl', ':PaqList<CR>')
+
+-- minsnip
+map('i', '<C-j>', '<cmd>lua require("minsnip").jump()<CR>')
+map('i', '<C-k>', '<cmd>lua require("minsnip").jump_backwards()<CR>')
 
 -- zen-mode
 map('n', '<leader>z', ':ZenMode<CR>')
