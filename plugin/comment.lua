@@ -11,6 +11,11 @@ require('Comment').setup {
     line = 'gc',
     block = 'gb',
   },
+  extra = {
+    above = 'gcO',
+    below = 'gco',
+    eol = 'gcA',
+  },
   mappings = {
     basic = true,
     extra = true,
