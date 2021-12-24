@@ -16,4 +16,6 @@ require('paq') {
   'nvim-telescope/telescope.nvim',
   'nvim-lua/plenary.nvim',
   'jose-elias-alvarez/minsnip.nvim',
+  'TheBlob42/drex.nvim',
+  'kyazdani42/nvim-web-devicons',
 }

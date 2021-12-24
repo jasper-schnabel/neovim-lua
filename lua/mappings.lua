@@ -58,6 +58,9 @@ map('i', '<C-k>', '<cmd>lua require("minsnip").jump_backwards()<CR>')
 -- zen-mode
 map('n', '<leader>z', ':ZenMode<CR>')
 
+-- drex
+map('n', '<leader>e', ':DrexDrawerToggle<CR>')
+
 -- telescope
 map('n', '<leader>f', ':Telescope find_files<CR>')
 map('n', '<leader>fg', ':Telescope git_files<CR>')
