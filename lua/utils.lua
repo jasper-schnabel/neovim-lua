@@ -39,6 +39,16 @@ M.map = function(mode, mapping, functionality, options)
   return vim.api.nvim_set_keymap(mode, mapping, functionality, options)
 end
 
+-- if the drawer window is closed open it, find the current file in the drawer window and jump to it
+-- if the drawer window is open close it
+M.drex_toggle = function()
+  if require('drex.drawer').get_drawer_window() then
+    require('drex.drawer').close()
+  else
+    require('drex.drawer').find_element('%', true, true)
+  end
+end
+
 -- provide mappings, capabilities and a root directory for the lsp setups
 M.lsp_setup = function()
   local function custom_attach()
