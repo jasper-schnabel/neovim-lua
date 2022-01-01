@@ -46,3 +46,4 @@ o.updatetime = 300 -- faster completion
 vim.api.nvim_command('autocmd FileType markdown setlocal spell | setlocal wrap')
 vim.api.nvim_command('autocmd FileType help,lspinfo,qf nnoremap <buffer><silent> q :q<CR>')
 vim.api.nvim_command('autocmd TextYankPost * lua vim.highlight.on_yank({ higroup = "Search", on_visual = false })')
+vim.api.nvim_command('autocmd FileType drex setlocal nobuflisted')
