@@ -1,6 +1,6 @@
 # neovim-lua
 
-A simple and powerful neovim setup configured with lua, always kinda WIP!
+A simple and powerful neovim setup configured in lua, always kinda WIP!
 
 ## Features
 
