@@ -21,7 +21,7 @@ A simple and powerful neovim setup configured in lua, always kinda WIP!
 
 ### Installation
 
-You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/.local/share/bin/install-neovim), please read it before executing an unknown script from the internet.
+You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/.local/share/bin/installation/install-neovim), please read it before executing an unknown script from the internet.
 
 ### Todo
 
