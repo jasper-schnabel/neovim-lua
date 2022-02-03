@@ -39,8 +39,4 @@ require('drex.config').configure {
     vim.wo.relativenumber = false
     vim.wo.number = false
   end,
-  on_leave = function()
-    vim.wo.number = true
-    vim.wo.relativenumber = true
-  end,
 }
