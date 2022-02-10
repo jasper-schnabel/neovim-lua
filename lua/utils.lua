@@ -12,7 +12,7 @@ M.resize = function(vsplit, margin)
   local not_last = not (cur_win == new_win)
   local sign = margin > 0
 
-  if (not_last == true) then
+  if not_last == true then
     vim.api.nvim_command('wincmd p')
   else
     sign = not sign
@@ -24,7 +24,7 @@ M.resize = function(vsplit, margin)
   vim.api.nvim_command(cmd)
 end
 
--- vim.api.nvim_set_keymap wrapper, that uses default options if none are passed
+-- vim.keymap.set wrapper, that uses default options if none are passed
 -- @param mode (string)
 -- @param mapping (string)
 -- @param functionality (string)
@@ -32,11 +32,11 @@ end
 M.map = function(mode, mapping, functionality, options)
   local default_options = { noremap = true, silent = true }
 
-  if (options == nil) then
+  if options == nil then
     options = default_options
   end
 
-  return vim.api.nvim_set_keymap(mode, mapping, functionality, options)
+  return vim.keymap.set(mode, mapping, functionality, options)
 end
 
 -- if the drawer window is closed open it, find the current file in the drawer window and jump to it
@@ -51,7 +51,7 @@ end
 
 -- provide mappings, capabilities and a root directory for the lsp setups
 M.lsp_setup = function()
-  local function custom_attach()
+  local custom_attach = function()
     local map = M.map
 
     map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')

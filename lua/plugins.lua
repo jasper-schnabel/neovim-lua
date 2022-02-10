@@ -18,4 +18,5 @@ require('paq') {
   'jose-elias-alvarez/minsnip.nvim',
   'TheBlob42/drex.nvim',
   'kyazdani42/nvim-web-devicons',
+  'jandamm/cryoline.nvim',
 }

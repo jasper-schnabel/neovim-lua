@@ -13,6 +13,7 @@ A simple and powerful neovim setup configured in lua, always kinda WIP!
 - telescope
 - filetree
 - colorizer
+- statusline
 - zen-mode
 
 ### Requirements

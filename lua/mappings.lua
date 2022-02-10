@@ -52,8 +52,8 @@ map('n', '<leader>ps', ':PaqSync<CR>')
 map('n', '<leader>pl', ':PaqList<CR>')
 
 -- minsnip
-map('i', '<C-j>', '<cmd>lua require("minsnip").jump()<CR>')
-map('i', '<C-k>', '<cmd>lua require("minsnip").jump_backwards()<CR>')
+map('i', '<C-j>', ':lua require("minsnip").jump()<CR>')
+map('i', '<C-k>', ':lua require("minsnip").jump_backwards()<CR>')
 
 -- zen-mode
 map('n', '<leader>z', ':ZenMode<CR>')
