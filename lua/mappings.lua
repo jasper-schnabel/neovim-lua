@@ -8,10 +8,10 @@ map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
 -- better window resizing
-map('n', '<C-Right>', ':lua require("utils").resize(true, 3)<CR>')
-map('n', '<C-Left>', ':lua require("utils").resize(true, -3)<CR>')
-map('n', '<C-Down>', ':lua require("utils").resize(false, 3)<CR>')
-map('n', '<C-Up>', ':lua require("utils").resize(false, -3)<CR>')
+map('n', '<C-Right>', function() require("utils").resize(true, 3) end)
+map('n', '<C-Left>', function() require("utils").resize(true, -3) end)
+map('n', '<C-Down>', function() require("utils").resize(false, 3) end)
+map('n', '<C-Up>', function() require("utils").resize(false, -3) end)
 
 -- better buffer switching
 map('n', '<S-l>', ':bnext<CR>')
@@ -51,15 +51,11 @@ map('n', '<leader>,', '<Esc>/<++><CR>c4l')
 map('n', '<leader>ps', ':PaqSync<CR>')
 map('n', '<leader>pl', ':PaqList<CR>')
 
--- minsnip
-map('i', '<C-j>', ':lua require("minsnip").jump()<CR>')
-map('i', '<C-k>', ':lua require("minsnip").jump_backwards()<CR>')
-
 -- zen-mode
 map('n', '<leader>z', ':ZenMode<CR>')
 
 -- drex
-map('n', '<leader>e', ':lua require("utils").drex_toggle()<CR>')
+map('n', '<leader>e', function() require("utils").drex_toggle() end)
 
 -- telescope
 map('n', '<leader>f', ':Telescope find_files<CR>')

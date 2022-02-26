@@ -26,5 +26,6 @@ You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/
 
 ### Todo
 
-- statusline and bufferline
+- snippets
 - colorscheme
+- bufferline
