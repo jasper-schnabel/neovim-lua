@@ -50,7 +50,7 @@ M.drex_toggle = function()
 end
 
 -- provide mappings, capabilities and a root directory for the lsp setups
-M.lsp_setup = function()
+M.lsp_setup = function(bufnr)
   local custom_attach = function()
     local map = M.map
 
@@ -70,8 +70,22 @@ M.lsp_setup = function()
     map('n', '<leader>li', ':LspInfo<CR>')
     map('n', '<leader>ls', ':LspStop<CR>')
 
-    vim.api.nvim_command('autocmd CursorHold,CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()')
-    vim.api.nvim_command('autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()')
+    local lsp_group = vim.api.nvim_create_augroup('LSP', { clear = true })
+    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+      callback = function()
+        vim.lsp.buf.document_highlight()
+      end,
+      buffer = bufnr,
+      group = lsp_group,
+    })
+
+    vim.api.nvim_create_autocmd('CursorMoved', {
+      callback = function()
+        vim.lsp.buf.clear_references()
+      end,
+      buffer = bufnr,
+      group = lsp_group,
+    })
   end
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   local root_dir = vim.loop.cwd

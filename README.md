@@ -18,7 +18,7 @@ A simple and powerful neovim setup configured in lua, always kinda WIP!
 
 ### Requirements
 
-- neovim version >= 0.5
+- neovim nightly
 
 ### Installation
 

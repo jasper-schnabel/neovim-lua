@@ -4,11 +4,13 @@ require('drex.config').configure {
     default_width = 35,
     window_picker = { enabled = false },
   },
+  hijack_netrw = true,
   disable_default_keybindings = true,
   keybindings = {
     ['n'] = {
       ['v'] = 'V',
       ['l'] = ':lua require("drex").expand_element()<CR>',
+      ['<CR>'] = ':lua require("drex").expand_element()<CR>',
       ['h'] = ':lua require("drex").collapse_directory()<CR>',
       ['<C-v>'] = ':lua require("drex").open_file("vs")<CR>',
       ['<C-x>'] = ':lua require("drex").open_file("sp")<CR>',

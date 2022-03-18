@@ -1,5 +1,6 @@
 -- options
-local o, g, indent = vim.opt, vim.g, 2
+local o, a, g = vim.opt, vim.api, vim.g
+local indent = 2
 
 o.fileencoding = 'utf-8'
 o.spelllang = 'en,de'
@@ -16,12 +17,22 @@ o.relativenumber = true
 o.cursorline = true
 o.signcolumn = 'yes'
 o.fillchars = { vert = ' ' }
-o.splitbelow = true
-o.splitright = true
+o.laststatus = 3
 o.wrap = false
 o.linebreak = true
 o.pumheight = 10
 o.completeopt = { 'menu', 'menuone', 'noselect' } -- cmp uses that
+o.splitbelow = true
+o.splitright = true
+o.fillchars = {
+  horiz = '━',
+  horizup = '┻',
+  horizdown = '┳',
+  vert = '┃',
+  vertleft = '┫',
+  vertright = '┣',
+  verthoriz = '╋',
+}
 
 o.undofile = true
 o.swapfile = false
@@ -43,9 +54,30 @@ o.smartindent = true
 o.timeoutlen = 300 -- time to wait for a mapped sequence to complete (in milliseconds)
 o.updatetime = 300 -- faster completion
 
-vim.api.nvim_command('autocmd FileType markdown setlocal spell | setlocal wrap')
-vim.api.nvim_command('autocmd FileType help,lspinfo,qf nnoremap <buffer><silent> q :q<CR>')
-vim.api.nvim_command('autocmd TextYankPost * lua vim.highlight.on_yank({ higroup = "Search", on_visual = false })')
-vim.api.nvim_command('autocmd FileType drex setlocal nobuflisted')
+a.nvim_add_user_command('PInspect', function(v) print(vim.inspect(v)) return v end, {})
 
-vim.api.nvim_add_user_command('PInspect', function(v) print(vim.inspect(v)) return v end, {})
+local settings_group = a.nvim_create_augroup('Settings', { clear = true })
+a.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  command = 'setlocal spell | setlocal wrap',
+  group = settings_group,
+})
+
+a.nvim_create_autocmd('FileType', {
+  pattern = 'help,lspinfo,qf',
+  command = 'nnoremap <buffer><silent> q :q<CR>',
+  group = settings_group,
+})
+
+a.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank({ higroup = 'Search', on_visual = false })
+  end,
+  group = settings_group,
+})
+
+a.nvim_create_autocmd('FileType', {
+  pattern = 'drex',
+  command = 'setlocal nobuflisted',
+  group = settings_group,
+})
