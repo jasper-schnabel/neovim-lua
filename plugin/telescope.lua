@@ -10,4 +10,9 @@ require('telescope').setup {
       },
     },
   },
+  pickers = {
+    lsp_code_actions = {
+      theme = 'cursor',
+    },
+  },
 }

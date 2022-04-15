@@ -16,7 +16,6 @@ o.number = true
 o.relativenumber = true
 o.cursorline = true
 o.signcolumn = 'yes'
-o.fillchars = { vert = ' ' }
 o.laststatus = 3
 o.wrap = false
 o.linebreak = true
@@ -54,9 +53,8 @@ o.smartindent = true
 o.timeoutlen = 300 -- time to wait for a mapped sequence to complete (in milliseconds)
 o.updatetime = 300 -- faster completion
 
-a.nvim_add_user_command('PInspect', function(v) print(vim.inspect(v)) return v end, {})
-
 local settings_group = a.nvim_create_augroup('Settings', { clear = true })
+
 a.nvim_create_autocmd('FileType', {
   pattern = 'markdown',
   command = 'setlocal spell | setlocal wrap',

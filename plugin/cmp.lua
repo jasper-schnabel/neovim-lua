@@ -15,11 +15,11 @@ require('cmp').setup {
     { name = 'path' },
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
-    { name = 'spell', max_item_count = 15 },
+    { name = 'snippy' },
   },
   snippet = {
-    expand = function()
-      error('Snippet engine is not configured.')
+    expand = function(args)
+      require('snippy').expand_snippet(args.body)
     end
   },
   formatting = {
@@ -31,7 +31,6 @@ require('cmp').setup {
     maxheight = 15,
   },
   experimental = {
-    native_menu = false,
     ghost_text = true, -- this is pretty cool
   },
 }

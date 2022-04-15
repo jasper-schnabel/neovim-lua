@@ -1,10 +1,11 @@
 -- cryoline
 require('cryoline').config {
-  force_ft = { 'qf', 'help', 'drex' },
+  force_ft = { 'qf', 'help', 'drex', 'TelescopePrompt' },
   ft = {
     qf = '%=Quickfix%=',
     help = '%=Help %t%=',
     drex = '%=File Tree%=',
+    TelescopePrompt = '%=Telescope%=',
   },
   line = function(context)
     local line = '%=%f%='

@@ -5,16 +5,17 @@ A simple and powerful neovim setup configured in lua, always kinda WIP!
 ## Features
 
 - plugin manager
-- LSP
 - treesitter
-- Comment.nvim
+- LSP
 - cmp
+- snippets
 - autopairs
+- Comment.nvim
 - telescope
 - filetree
-- colorizer
 - statusline
 - zen-mode
+- colorizer
 
 ### Requirements
 
@@ -26,6 +27,14 @@ You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/
 
 ### Todo
 
-- snippets
+- drex: colored icons
+- cmp: appearance and documentation
 - colorscheme
-- bufferline
+- add https://github.com/rafcamlet/tabline-framework.nvim
+- LSP:
+  - rename UI
+  - refactor everything
+- add user_command for:
+```lua
+print(vim.inspect(TABLE))
+```

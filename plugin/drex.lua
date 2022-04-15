@@ -2,7 +2,7 @@
 require('drex.config').configure {
   drawer = {
     default_width = 35,
-    window_picker = { enabled = false },
+    window_picker = { enabled = true },
   },
   hijack_netrw = true,
   disable_default_keybindings = true,
@@ -24,9 +24,10 @@ require('drex.config').configure {
       ['p'] = ':lua require("drex.actions").copy_and_paste()<CR>',
       ['P'] = ':lua require("drex.actions").cut_and_move()<CR>',
       ['r'] = ':lua require("drex.actions").rename()<CR>',
-      ['m'] = ':DrexToggle<CR>',
+      ['R'] = ':lua require("drex.actions").multi_rename("clipboard")<CR>',
+      ['m'] = ':lua require("drex.actions").toggle()<CR>',
       ['cc'] = ':lua require("drex.actions").clear_clipboard()<CR>',
-      ['cs'] = ':lua require("drex.actions").print_clipboard()<CR>',
+      ['cs'] = ':lua require("drex.actions").open_clipboard_window()<CR>',
       ['y'] = ':lua require("drex.actions").copy_element_name()<CR>',
       ['Y'] = ':lua require("drex.actions").copy_element_absolute_path()<CR>',
     },

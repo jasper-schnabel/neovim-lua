@@ -39,13 +39,16 @@ M.map = function(mode, mapping, functionality, options)
   return vim.keymap.set(mode, mapping, functionality, options)
 end
 
--- if the drawer window is closed open it, find the current file in the drawer window and jump to it
--- if the drawer window is open close it
+-- a better version to toggle the drex drawer
 M.drex_toggle = function()
   if require('drex.drawer').get_drawer_window() then
     require('drex.drawer').close()
   else
-    require('drex.drawer').find_element('%', true, true)
+    if vim.api.nvim_buf_get_name(0) == '' then
+      require('drex.drawer').open()
+    else
+      require('drex.drawer').find_element('%', true, true)
+    end
   end
 end
 
@@ -61,7 +64,7 @@ M.lsp_setup = function(bufnr)
     map('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
     map('n', '<C-w>', ':lua vim.lsp.buf.signature_help()<CR>')
     map('n', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>')
-    map('n', '<leader>la', ':lua vim.lsp.buf.code_action()<CR>')
+    map('n', '<leader>la', ':lua require("telescope.builtin").lsp_code_actions()<CR>')
     map('n', '<C-n>', ':lua vim.diagnostic.goto_next()<CR>')
     map('n', '<C-p>', ':lua vim.diagnostic.goto_prev()<CR>')
     map('n', '<space>wa', ':lua vim.lsp.buf.add_workspace_folder()<CR>')
