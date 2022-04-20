@@ -24,21 +24,6 @@ M.resize = function(vsplit, margin)
   vim.api.nvim_command(cmd)
 end
 
--- vim.keymap.set wrapper, that uses default options if none are passed
--- @param mode (string)
--- @param mapping (string)
--- @param functionality (string)
--- @param options (table)
-M.map = function(mode, mapping, functionality, options)
-  local default_options = { noremap = true, silent = true }
-
-  if options == nil then
-    options = default_options
-  end
-
-  return vim.keymap.set(mode, mapping, functionality, options)
-end
-
 -- a better version to toggle the drex drawer
 M.drex_toggle = function()
   if require('drex.drawer').get_drawer_window() then

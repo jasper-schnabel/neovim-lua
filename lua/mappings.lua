@@ -1,5 +1,9 @@
 -- mappings
-local map = require('utils').map
+local map = function(m, k, f, o)
+  local so = { silent = true }
+  if o == nil then o = so end
+  return vim.keymap.set(m, k, f, o)
+end
 
 -- better window navigation
 map('n', '<C-h>', '<C-w>h')
@@ -8,10 +12,10 @@ map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
 -- better window resizing
-map('n', '<C-Right>', function() require("utils").resize(true, 3) end)
-map('n', '<C-Left>', function() require("utils").resize(true, -3) end)
-map('n', '<C-Down>', function() require("utils").resize(false, 3) end)
-map('n', '<C-Up>', function() require("utils").resize(false, -3) end)
+map('n', '<C-Right>', function() require('utils').resize(true, 3) end)
+map('n', '<C-Left>', function() require('utils').resize(true, -3) end)
+map('n', '<C-Down>', function() require('utils').resize(false, 3) end)
+map('n', '<C-Up>', function() require('utils').resize(false, -3) end)
 
 -- better buffer switching
 map('n', '<S-l>', ':bnext<CR>')
@@ -55,7 +59,7 @@ map('n', '<leader>pl', ':PaqList<CR>')
 map('n', '<leader>z', ':ZenMode<CR>')
 
 -- drex
-map('n', '<leader>e', function() require("utils").drex_toggle() end)
+map('n', '<leader>e', function() require('utils').drex_toggle() end)
 
 -- telescope
 map('n', '<leader>f', ':Telescope find_files<CR>')
@@ -63,4 +67,5 @@ map('n', '<leader>fg', ':Telescope git_files<CR>')
 map('n', '<leader>fl', ':Telescope live_grep<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fr', ':Telescope oldfiles<CR>')
+map('n', '<leader>fh', ':Telescope help_tags<CR>')
 map('n', '<leader>ft', ':Telescope<CR>')

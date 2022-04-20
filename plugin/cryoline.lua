@@ -39,7 +39,7 @@ require('cryoline').config {
     end
 
     if context.active then
-      line = mode() .. '%#StatusLine#  %t  %R %= %l:%c  %p%%  ' .. vim.bo.filetype .. ' '
+      line = mode() .. '%#StatusLine# %t %R %=' .. context.ft .. ' %p%% %l:%c '
     end
 
     return line

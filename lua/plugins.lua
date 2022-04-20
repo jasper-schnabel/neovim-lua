@@ -16,6 +16,7 @@ require('paq') {
   'nvim-lua/plenary.nvim',
   'TheBlob42/drex.nvim',
   'kyazdani42/nvim-web-devicons',
+  'rafcamlet/tabline-framework.nvim',
   'jandamm/cryoline.nvim',
   'folke/zen-mode.nvim',
   'norcalli/nvim-colorizer.lua',

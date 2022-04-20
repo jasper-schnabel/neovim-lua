@@ -6,7 +6,7 @@ local p = {
 }
 
 -- loop through table and highlight all groups
-local function apply_highlights(hi_table)
+local apply_highlights = function(hi_table)
   vim.api.nvim_command('highlight clear')
   vim.opt.background = 'dark'
   vim.opt.termguicolors = true

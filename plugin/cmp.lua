@@ -24,11 +24,7 @@ require('cmp').setup {
   },
   formatting = {
     -- needs to be setup once lspconfig is setup
-  },
-  documentation = {
-    border = 'rounded',
-    maxwidth = 60,
-    maxheight = 15,
+    -- the documentation option needs to be setup once it's merged to view
   },
   experimental = {
     ghost_text = true, -- this is pretty cool

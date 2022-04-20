@@ -30,7 +30,9 @@ You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/
 - drex: colored icons
 - cmp: appearance and documentation
 - colorscheme
-- add https://github.com/rafcamlet/tabline-framework.nvim
+- style tabline-framework and cryoline.nvim
+- better colorizer
+- rework `utils.lua` file
 - LSP:
   - rename UI
   - refactor everything
