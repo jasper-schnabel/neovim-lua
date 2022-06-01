@@ -23,9 +23,14 @@ require('cmp').setup {
     end
   },
   formatting = {
-    -- needs to be setup once lspconfig is setup
-    -- the documentation option needs to be setup once it's merged to view
+    fields = { 'kind', 'abbr', 'menu' },
+    format = function(_, vim_item)
+      vim_item.menu = vim_item.kind
+      vim_item.kind = require('icons')[vim_item.kind]
+      return vim_item
+    end,
   },
+  -- the documentation and window option need to be setup once they are merged into view
   experimental = {
     ghost_text = true, -- this is pretty cool
   },

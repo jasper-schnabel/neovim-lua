@@ -27,16 +27,11 @@ You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/
 
 ### Todo
 
-- drex: colored icons
 - cmp: appearance and documentation
 - colorscheme
 - style tabline-framework and cryoline.nvim
 - better colorizer
 - rework `utils.lua` file
 - LSP:
-  - rename UI
+  - rename and codeactions UI
   - refactor everything
-- add user_command for:
-```lua
-print(vim.inspect(TABLE))
-```

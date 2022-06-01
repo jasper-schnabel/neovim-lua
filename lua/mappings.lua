@@ -12,10 +12,10 @@ map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
 -- better window resizing
-map('n', '<C-Right>', function() require('utils').resize(true, 3) end)
-map('n', '<C-Left>', function() require('utils').resize(true, -3) end)
-map('n', '<C-Down>', function() require('utils').resize(false, 3) end)
-map('n', '<C-Up>', function() require('utils').resize(false, -3) end)
+map('n', '<A-C-h>', function() require('utils').resize(true, -3) end)
+map('n', '<A-C-j>', function() require('utils').resize(false, 3) end)
+map('n', '<A-C-k>', function() require('utils').resize(false, -3) end)
+map('n', '<A-C-l>', function() require('utils').resize(true, 3) end)
 
 -- better buffer switching
 map('n', '<S-l>', ':bnext<CR>')
