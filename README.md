@@ -27,11 +27,9 @@ You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/
 
 ### Todo
 
-- cmp: appearance and documentation
 - colorscheme
-- style tabline-framework and cryoline.nvim
 - better colorizer
 - rework `utils.lua` file
+- add missing plugins
 - LSP:
-  - rename and codeactions UI
   - refactor everything

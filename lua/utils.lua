@@ -40,7 +40,7 @@ end
 -- provide mappings, capabilities and a root directory for the lsp setups
 M.lsp_setup = function(bufnr)
   local custom_attach = function()
-    local map = M.map
+    local map = vim.keymap.set
 
     map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
     map('n', 'gr', ':lua vim.lsp.buf.references()<CR>')
@@ -49,7 +49,7 @@ M.lsp_setup = function(bufnr)
     map('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
     map('n', '<C-w>', ':lua vim.lsp.buf.signature_help()<CR>')
     map('n', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>')
-    map('n', '<leader>la', ':lua require("telescope.builtin").lsp_code_actions()<CR>')
+    map('n', '<leader>la', ':lua vim.lsp.buf.code_action()<CR>')
     map('n', '<C-n>', ':lua vim.diagnostic.goto_next()<CR>')
     map('n', '<C-p>', ':lua vim.diagnostic.goto_prev()<CR>')
     map('n', '<space>wa', ':lua vim.lsp.buf.add_workspace_folder()<CR>')

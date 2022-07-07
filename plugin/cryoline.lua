@@ -39,7 +39,7 @@ require('cryoline').config {
     end
 
     if context.active then
-      line = mode() .. '%#StatusLine# %t %R %=' .. context.ft .. ' %p%% %l:%c '
+      line = mode() .. '%#StatusLine# %t %R %=' .. context.ft .. ' | %l:%c | %p%% '
     end
 
     return line

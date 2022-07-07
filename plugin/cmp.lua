@@ -30,7 +30,7 @@ require('cmp').setup {
       return vim_item
     end,
   },
-  -- the documentation and window option need to be setup once they are merged into view
+  window = { documentation = { border = 'rounded' } },
   experimental = {
     ghost_text = true, -- this is pretty cool
   },
