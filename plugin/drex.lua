@@ -39,7 +39,7 @@ require('drex.config').configure {
     }
   },
   on_enter = function()
-    vim.wo.relativenumber = false
-    vim.wo.number = false
+    vim.opt.relativenumber = false
+    vim.opt.number = false
   end,
 }

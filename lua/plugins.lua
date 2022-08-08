@@ -19,5 +19,5 @@ require('paq') {
   'rafcamlet/tabline-framework.nvim',
   'jandamm/cryoline.nvim',
   'folke/zen-mode.nvim',
-  'xiyaowong/nvim-colorizer.lua',
+  'brenoprata10/nvim-highlight-colors',
 }

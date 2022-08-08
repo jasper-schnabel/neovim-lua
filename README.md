@@ -28,8 +28,7 @@ You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/
 ### Todo
 
 - colorscheme
-- better colorizer
 - rework `utils.lua` file
-- add missing plugins
-- LSP:
-  - refactor everything
+- add https://github.com/glepnir/indent-guides.nvim
+- maybe https://github.com/jose-elias-alvarez/null-ls.nvim
+- refactor LSP
