@@ -51,21 +51,24 @@ map('n', '<leader>w', ':set wrap!<CR>')
 map('i', ',,', '<Esc>/<++><CR>c4l')
 map('n', '<leader>,', '<Esc>/<++><CR>c4l')
 
+-- debugprint
+map('n', '<leader>dp', function() require('debugprint').deleteprints() end)
+
 -- paq
 map('n', '<leader>ps', ':PaqSync<CR>')
 map('n', '<leader>pl', ':PaqList<CR>')
 
 -- zen-mode
-map('n', '<leader>z', ':ZenMode<CR>')
+map('n', '<leader>z', function() require('zen-mode').toggle() end)
 
 -- drex
 map('n', '<leader>e', function() require('utils').drex_toggle() end)
 
 -- telescope
-map('n', '<leader>f', ':Telescope find_files<CR>')
-map('n', '<leader>fg', ':Telescope git_files<CR>')
-map('n', '<leader>fl', ':Telescope live_grep<CR>')
-map('n', '<leader>fb', ':Telescope buffers<CR>')
-map('n', '<leader>fr', ':Telescope oldfiles<CR>')
-map('n', '<leader>fh', ':Telescope help_tags<CR>')
+map('n', '<leader>f',  function() require('telescope.builtin').find_files() end)
+map('n', '<leader>fg', function() require('telescope.builtin').git_files() end)
+map('n', '<leader>fl', function() require('telescope.builtin').live_grep() end)
+map('n', '<leader>fb', function() require('telescope.builtin').buffers() end)
+map('n', '<leader>fo', function() require('telescope.builtin').oldfiles() end)
+map('n', '<leader>fh', function() require('telescope.builtin').help_tags() end)
 map('n', '<leader>ft', ':Telescope<CR>')

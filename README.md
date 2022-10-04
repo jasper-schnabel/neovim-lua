@@ -7,13 +7,13 @@ A simple and powerful neovim setup configured in lua, always kinda WIP!
 - plugin manager
 - treesitter
 - LSP
-- cmp
+- completion
 - snippets
 - autopairs
 - Comment.nvim
-- telescope
+- telescope.nvim
 - filetree
-- statusline
+- statusline and bufferline
 - zen-mode
 - colorizer
 
@@ -28,7 +28,5 @@ You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/
 ### Todo
 
 - colorscheme
-- rework `utils.lua` file
 - add https://github.com/glepnir/indent-guides.nvim
 - maybe https://github.com/jose-elias-alvarez/null-ls.nvim
-- refactor LSP

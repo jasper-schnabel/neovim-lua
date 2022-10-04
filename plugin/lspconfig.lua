@@ -32,3 +32,6 @@ for _, type in pairs(signs) do
   local hl = 'DiagnosticSign' .. type
   vim.fn.sign_define(hl, { text = '▶', texthl = hl })
 end
+
+-- setup debugger
+require('debugprint').setup()

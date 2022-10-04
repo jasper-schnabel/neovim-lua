@@ -1,14 +1,12 @@
 -- html lsp
-local custom_attach, updated_capabilities, root_dir = require('utils').lsp_setup()
+local updated_capabilities, root_dir = require('utils').lsp_options()
 
 require('lspconfig').html.setup {
-  on_attach = custom_attach,
   capabilities = updated_capabilities,
   root_dir = root_dir,
 }
 
 require('lspconfig').emmet_ls.setup {
-  on_attach = custom_attach,
   capabilities = updated_capabilities,
   root_dir = root_dir,
 }

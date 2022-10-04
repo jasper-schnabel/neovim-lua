@@ -4,9 +4,9 @@ require('cmp').setup {
   mapping = {
     ['<C-n>'] = require('cmp').mapping.select_next_item(),
     ['<C-p>'] = require('cmp').mapping.select_prev_item(),
-    ['<C-d>'] = require('cmp').mapping.scroll_docs(-4),
+    ['<C-b>'] = require('cmp').mapping.scroll_docs(-4),
     ['<C-f>'] = require('cmp').mapping.scroll_docs(4),
-    ['<C-Space>'] = require('cmp').mapping.complete(),
+    ['<C-space>'] = require('cmp').mapping.complete(),
     ['<C-e>'] = require('cmp').mapping.close(),
     ['<C-y>'] = require('cmp').mapping.confirm({ select = true })
   },

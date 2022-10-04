@@ -1,4 +1,5 @@
 -- highlight colors
 require('nvim-highlight-colors').setup {
-  render = 'background'
+  render = 'background',
+  enable_named_colors = true,
 }

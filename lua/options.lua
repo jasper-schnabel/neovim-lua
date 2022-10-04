@@ -54,28 +54,3 @@ o.updatetime = 300
 o.confirm = true
 o.undofile = true
 o.swapfile = false
-
-a.nvim_create_autocmd('FileType', {
-  pattern = 'markdown',
-  command = 'setlocal spell | setlocal wrap',
-  group = group,
-})
-
-a.nvim_create_autocmd('FileType', {
-  pattern = 'drex',
-  command = 'setlocal nobuflisted',
-  group = group,
-})
-
-a.nvim_create_autocmd('FileType', {
-  pattern = { 'help', 'lspinfo', 'qf' },
-  command = 'nnoremap <buffer><silent> q :q<CR>',
-  group = group,
-})
-
-a.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank({ higroup = 'Search' })
-  end,
-  group = group,
-})

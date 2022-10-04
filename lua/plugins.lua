@@ -12,6 +12,7 @@ require('paq') {
   'dcampos/nvim-snippy',
   'windwp/nvim-autopairs',
   'numToStr/Comment.nvim',
+  'andrewferrier/debugprint.nvim',
   'nvim-telescope/telescope.nvim',
   'nvim-lua/plenary.nvim',
   'TheBlob42/drex.nvim',
