@@ -20,5 +20,6 @@ require('paq') {
   'rafcamlet/tabline-framework.nvim',
   'jandamm/cryoline.nvim',
   'folke/zen-mode.nvim',
+  'doums/suit.nvim',
   'brenoprata10/nvim-highlight-colors',
 }

@@ -28,5 +28,8 @@ You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/
 ### Todo
 
 - colorscheme
-- add https://github.com/glepnir/indent-guides.nvim
-- maybe https://github.com/jose-elias-alvarez/null-ls.nvim
+- maybe add https://github.com/glepnir/indent-guides.nvim
+- maybe add https://github.com/jose-elias-alvarez/null-ls.nvim
+- maybe upgrade to https://github.com/wbthomason/packer.nvim
+- maybe upgrade to https://github.com/rebelot/heirline.nvim
+- check all files for old vim api and replace it with newer lua api

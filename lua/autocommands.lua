@@ -15,7 +15,9 @@ a.nvim_create_autocmd('FileType', {
 
 a.nvim_create_autocmd('FileType', {
   pattern = { 'help', 'lspinfo', 'qf' },
-  command = 'nnoremap <buffer><silent> q :q<CR>',
+  callback = function(args)
+    vim.keymap.set('n', 'q', ':q<CR>', { silent = true, buffer = args.buf })
+  end,
   group = group,
 })
 
@@ -45,8 +47,7 @@ a.nvim_create_autocmd('LspAttach', {
     map('n', '<leader>wa', function() vim.lsp.buf.add_workspace_folder() end, opts)
     map('n', '<leader>wr', function() vim.lsp.buf.remove_workspace_folder() end, opts)
     map('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
-    map('n', '<leader>li', ':LspInfo<CR>', opts)
-    map('n', '<leader>ls', ':LspStop<CR>', opts)
+    map('n', '<leader>li', function() require('lspconfig.ui.lspinfo')() end, opts)
 
     a.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       callback = function() vim.lsp.buf.document_highlight() end,

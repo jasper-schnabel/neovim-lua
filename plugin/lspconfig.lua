@@ -33,5 +33,17 @@ for _, type in pairs(signs) do
   vim.fn.sign_define(hl, { text = '▶', texthl = hl })
 end
 
+-- setup code_action and rename ui
+require('suit').setup {
+  input = {
+    border = 'rounded',
+    hl_prompt = 'Boolean',
+  },
+  select = {
+    border = 'rounded',
+    hl_prompt = 'Boolean',
+  },
+}
+
 -- setup debugger
 require('debugprint').setup()
