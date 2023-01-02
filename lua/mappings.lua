@@ -38,8 +38,12 @@ map('n', '<A-k>', ':m .-2<CR>==')
 map('v', 'J', ':m \'>+1<CR>gv=gv')
 map('v', 'K', ':m \'<-2<CR>gv=gv')
 
--- keep J centered
+-- keep them centered
 map('n', 'J', 'mzJ`z')
+map('n', '<C-d>', '<C-d>zz')
+map('n', '<C-u>', '<C-u>zz')
+map('n', 'n', 'nzzzv')
+map('n', 'N', 'Nzzzv')
 
 -- remove hlsearch
 map('n', '<leader><Space>', ':nohlsearch<CR>')
