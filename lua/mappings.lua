@@ -62,8 +62,8 @@ map('n', '<leader>pl', ':PaqList<CR>')
 -- zen-mode
 map('n', '<leader>z', function() require('zen-mode').toggle() end)
 
--- drex
-map('n', '<leader>e', function() require('utils').drex_toggle() end)
+-- sfm
+map('n', '<leader>e', ':SFMToggle<CR>')
 
 -- telescope
 map('n', '<leader>f',  function() require('telescope.builtin').find_files() end)

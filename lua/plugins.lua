@@ -14,13 +14,10 @@ require('paq') {
   'numToStr/Comment.nvim',
   'nvim-telescope/telescope.nvim',
   'nvim-lua/plenary.nvim',
+  'dinhhuy258/sfm.nvim',
   'kyazdani42/nvim-web-devicons',
   'folke/zen-mode.nvim',
   'doums/suit.nvim',
   'brenoprata10/nvim-highlight-colors',
   'nvimdev/indentmini.nvim',
-
-  'TheBlob42/drex.nvim',
-  'rafcamlet/tabline-framework.nvim',
-  'jandamm/cryoline.nvim',
 }

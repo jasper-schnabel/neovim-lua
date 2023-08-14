@@ -12,6 +12,7 @@ A simple and powerful neovim setup configured in lua, always kinda WIP!
 - snippets
 - autopairs
 - Comment.nvim
+- filetree
 - telescope.nvim
 - zen-mode
 - colorizer
@@ -28,9 +29,8 @@ You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/
 ### Todo
 
 - colorscheme
+- status and bufferline
 - linter/formatter (https://github.com/nvimdev/guard.nvim)
+- git plugin (https://github.com/NeogitOrg/neogit)
 - debugger
 - maybe new package manager (https://github.com/folke/lazy.nvim)
-- maybe new filetree (https://github.com/dinhhuy258/sfm.nvim)
-- git plugin (https://github.com/NeogitOrg/neogit)
-- status and bufferline

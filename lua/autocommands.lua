@@ -8,12 +8,6 @@ a.nvim_create_autocmd('FileType', {
 })
 
 a.nvim_create_autocmd('FileType', {
-  pattern = 'drex',
-  command = 'setlocal nobuflisted',
-  group = group,
-})
-
-a.nvim_create_autocmd('FileType', {
   pattern = { 'help', 'lspinfo', 'qf' },
   callback = function(args)
     vim.keymap.set('n', 'q', ':q<CR>', { silent = true, buffer = args.buf })

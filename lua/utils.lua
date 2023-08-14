@@ -24,17 +24,4 @@ M.resize = function(vsplit, margin)
   vim.api.nvim_command(cmd)
 end
 
--- a better version to toggle the drex drawer
-M.drex_toggle = function()
-  if require('drex.drawer').get_drawer_window() then
-    require('drex.drawer').close()
-  else
-    if vim.api.nvim_buf_get_name(0) == '' then
-      require('drex.drawer').open()
-    else
-      require('drex.drawer').find_element('%', true, true)
-    end
-  end
-end
-
 return M
