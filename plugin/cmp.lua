@@ -26,7 +26,7 @@ require('cmp').setup {
     fields = { 'kind', 'abbr', 'menu' },
     format = function(_, vim_item)
       vim_item.menu = vim_item.kind
-      vim_item.kind = require('icons')[vim_item.kind]
+      vim_item.kind = vim.lsp.protocol.completion_icons[vim_item.kind]
       return vim_item
     end,
   },

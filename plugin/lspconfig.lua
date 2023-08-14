@@ -1,14 +1,4 @@
 -- lspconfig
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = 'rounded',
-  focusable = false,
-})
-
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = 'rounded',
-  focusable = false,
-})
-
 vim.diagnostic.config {
   underline = true,
   signs = true,
@@ -26,6 +16,16 @@ vim.diagnostic.config {
   severity_sort = true,
 }
 
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+  border = 'rounded',
+  focusable = false,
+})
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = 'rounded',
+  focusable = false,
+})
+
 local signs = { 'Error', 'Warn', 'Hint', 'Info' }
 
 for _, type in pairs(signs) do
@@ -33,17 +33,45 @@ for _, type in pairs(signs) do
   vim.fn.sign_define(hl, { text = '▶', texthl = hl })
 end
 
--- setup code_action and rename ui
-require('suit').setup {
-  input = {
-    border = 'rounded',
-    hl_prompt = 'Boolean',
-  },
-  select = {
-    border = 'rounded',
-    hl_prompt = 'Boolean',
-  },
+vim.lsp.protocol.completion_icons = {
+  Text = " ",
+  Method = " ",
+  Function = " ",
+  Constructor = " ",
+  Field = " ",
+  Variable = " ",
+  Class = "ﴯ ",
+  Interface = "פּ ",
+  Module = " ",
+  Property = " ",
+  Unit = "塞 ",
+  Value = " ",
+  Enum = " ",
+  Keyword = " ",
+  Snippet = " ",
+  Color = " ",
+  File = " ",
+  Reference = " ",
+  Folder = " ",
+  EnumMember = " ",
+  Constant = " ",
+  Struct = "פּ ",
+  Event = " ",
+  Operator = " ",
+  TypeParameter = " ",
 }
 
--- setup debugger
-require('debugprint').setup()
+local servers = { 'cssls', 'emmet_ls', 'html', 'tsserver', 'lua_ls', 'pyright', 'bashls' }
+
+for _, lsp in pairs(servers) do
+  local config = {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    root_dir = vim.loop.cwd,
+  }
+
+  if lsp == 'lua_ls' then
+    config.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
+  end
+
+  require('lspconfig')[lsp].setup(config)
+end

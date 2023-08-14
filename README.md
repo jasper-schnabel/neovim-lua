@@ -5,17 +5,17 @@ A simple and powerful neovim setup configured in lua, always kinda WIP!
 ## Features
 
 - plugin manager
+- sane default options and mappings
 - treesitter
 - LSP
-- completion
+- cmp.nvim
 - snippets
 - autopairs
 - Comment.nvim
 - telescope.nvim
-- filetree
-- statusline and bufferline
 - zen-mode
 - colorizer
+- indent lines
 
 ### Requirements
 
@@ -28,8 +28,9 @@ You can use this [script](https://github.com/jasper-schnabel/dotfiles/blob/main/
 ### Todo
 
 - colorscheme
-- maybe add https://github.com/glepnir/indent-guides.nvim
-- maybe add https://github.com/jose-elias-alvarez/null-ls.nvim
-- maybe upgrade to https://github.com/wbthomason/packer.nvim
-- maybe upgrade to https://github.com/rebelot/heirline.nvim
-- check all files for old vim api and replace it with newer lua api
+- linter/formatter (https://github.com/nvimdev/guard.nvim)
+- debugger
+- maybe new package manager (https://github.com/folke/lazy.nvim)
+- maybe new filetree (https://github.com/dinhhuy258/sfm.nvim)
+- git plugin (https://github.com/NeogitOrg/neogit)
+- status and bufferline

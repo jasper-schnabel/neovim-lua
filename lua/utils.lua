@@ -37,12 +37,4 @@ M.drex_toggle = function()
   end
 end
 
--- provide capabilities and a root directory for the lsp setups
-M.lsp_options = function()
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  local root_dir = vim.loop.cwd
-
-  return capabilities, root_dir
-end
-
 return M

@@ -28,7 +28,6 @@ a.nvim_create_autocmd('TextYankPost', {
   group = group,
 })
 
-
 a.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     local map, opts = vim.keymap.set, { silent = true, buffer = args.buf }
